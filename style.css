@@ -1,0 +1,137 @@
+/* fonts */
+/* font-family: 'Montserrat', sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-iris: #5d59af;
+  --lilac: #a072be;
+  --mauve: #be81b6;
+  --pink: #e390c8;
+  --white: #fff;
+  --black: #000;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xlg: 1.875rem;
+  --font-family: "Montserrat", sans-serif;
+  --small-gap: 0.625rem;
+  --large-gap: 1.25rem;
+}
+
+body {
+  background-color: var(--blue-iris);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  line-height: 1;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: var(--lilac);
+  color: var(--white);
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover:enabled {
+  cursor: pointer;
+  background-color: var(--black);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.pig-game-container {
+  display: flex;
+  width: 85%;
+  gap: var(--small-gap);
+  height: 25rem;
+  position: relative;
+  justify-content: center;
+}
+
+.player-section {
+  display: flex;
+  background-color: var(--mauve);
+  flex-basis: 50%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.player-section.active {
+  background-color: var(--pink);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.score {
+  font-size: var(--font-size-xlg);
+  color: var(--white);
+}
+
+.current {
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: var(--font-size-md);
+}
+
+.new-game {
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.roll-hold {
+  position: absolute;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+}
+
+.random-dice {
+  position: absolute;
+  width: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.winner {
+  background-color: var(--black);
+}
+
+.winner h2 {
+  color: var(--pink);
+}
+
+.winner .current {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+/* media query */
+@media screen and (min-width: 760px) {
+  .pig-game-container {
+    max-width: 600px;
+  }
+}
